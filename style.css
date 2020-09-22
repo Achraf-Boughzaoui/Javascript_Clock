@@ -1,0 +1,111 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Code";
+  font-weight: 600;
+}
+body {
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.wrapper-clock {
+  width: 300px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border: 2px solid black;
+  position: relative;
+}
+.wrapper-clock .number {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-size: 1.5rem;
+}
+
+.wrapper-clock .number1 {
+  --rotation: 30deg;
+}
+.wrapper-clock .number2 {
+  --rotation: 60deg;
+}
+.wrapper-clock .number3 {
+  --rotation: 90deg;
+}
+.wrapper-clock .number4 {
+  --rotation: 120deg;
+}
+.wrapper-clock .number5 {
+  --rotation: 150deg;
+}
+.wrapper-clock .number6 {
+  --rotation: 180deg;
+}
+.wrapper-clock .number7 {
+  --rotation: 210deg;
+}
+.wrapper-clock .number8 {
+  --rotation: 240deg;
+}
+.wrapper-clock .number9 {
+  --rotation: 270deg;
+}
+.wrapper-clock .number10 {
+  --rotation: 300deg;
+}
+.wrapper-clock .number11 {
+  --rotation: 330deg;
+}
+.wrapper-clock .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 10px;
+  height: 50%;
+  background-color: black;
+  border: 1px solid white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform-origin: bottom;
+  z-index: 10;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+.wrapper-clock::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  z-index: 11;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.wrapper-clock .hand.second {
+  width: 3px;
+  height: 45%;
+  background-color: red;
+}
+.wrapper-clock .hand.minute {
+  width: 7px;
+  height: 40%;
+  background-color: black;
+}
+.wrapper-clock .hand.hour {
+  width: 10px;
+  height: 35%;
+  background-color: black;
+}
